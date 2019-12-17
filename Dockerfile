@@ -5,3 +5,5 @@ RUN apt-get install -y apache2
 RUN apt-get install -y apache2-utils
 RUN rm /var/www/html/index.html
 ADD ./index.html /var/www/html
+EXPOSE 80
+CMD ["apache2ctl", "-D","FOREGROUND"]
